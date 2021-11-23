@@ -1,6 +1,7 @@
 import React from 'react'
 import Home from '../screens/Home/Home.screen'
-import Profile from '../screens/Profile/Profile.screen'
+import Login from '../screens/Login/Login'
+import SignUp from '../screens/SignUp/SignUp'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
@@ -18,8 +19,9 @@ function AuthStackNavigator() {
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName="Profile">
-      <AuthStack.Screen name="Profile" component={Profile} />
+      initialRouteName="Login">
+      <AuthStack.Screen name="Login" component={Login} />
+      <AuthStack.Screen name="SignUp" component={SignUp} />
     </AuthStack.Navigator>
   );
 }

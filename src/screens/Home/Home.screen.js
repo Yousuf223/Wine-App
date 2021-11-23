@@ -4,9 +4,9 @@ import {
   View,
   Text,
   StatusBar,
-  TouchableOpacity
+  TouchableOpacity,
+  StyleSheet
 } from 'react-native'
-import styles from './Home.style'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { connect, useDispatch } from 'react-redux'
 import { fetchDataUser } from '../../stores/actions/user.action'
@@ -36,15 +36,15 @@ const Home = ({ navigation, user }) => {
   return (
     <>
       <StatusBar barStyle="dark-content" backgroundColor={'#f9f9f9'} />
-      <SafeAreaView style={styles.SafeAreaView1} />
-      <SafeAreaView style={styles.SafeAreaView2}>
-        <View style={styles.outerWrapper}>
+      <SafeAreaView style={styles.container} />
+      <SafeAreaView >
+        <View >
           <Icon name={'ios-home'} size={100} color={'purple'} />
           <View>
             <TouchableOpacity
-              style={styles.buttonStyle}
+              
               onPress={() => dispatch(fetchDataUser())}>
-              <Text style={styles.text}>Click here to show User data:</Text>
+              <Text >Click here to show User data:</Text>
             </TouchableOpacity>
             <ListUser />
           </View>
@@ -59,5 +59,9 @@ const mapStateToProps = state => {
     user: state.userReducer.users
   }
 }
-
+const styles = StyleSheet.create({
+  container:{
+    flex:1
+  }
+})
 export default connect(mapStateToProps, null)(Home)
