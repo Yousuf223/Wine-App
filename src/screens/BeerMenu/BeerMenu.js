@@ -86,6 +86,7 @@ const BeerMenu = ({ navigation, user }) => {
                     </View>
                     <Text style={styles.text1}>75 Items</Text>
                 </View>
+                <View style={{paddingVertical:10}}>
                 <SearchBar
                     platform="ios"
                     placeholder="Search"
@@ -100,6 +101,7 @@ const BeerMenu = ({ navigation, user }) => {
                     onChangeText={setSearch}
                     value={search}
                 />
+                </View>
                 <View style={{ paddingHorizontal: 20 }}>
                     { 
                     cardData.map((item) => {
@@ -149,7 +151,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         paddingHorizontal: 20,
-        marginTop: 20
+        marginTop: "16%"
     },
     input: {
         height: 40,
@@ -174,7 +176,7 @@ const styles = StyleSheet.create({
       posi:{
         position:"absolute",
         zIndex:20,
-        top:"25%",
+        top:"50%",
         left:"83%"
       },
 })

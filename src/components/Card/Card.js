@@ -28,7 +28,7 @@ export default function Card({
 const styles = StyleSheet.create({
     card:{
         backgroundColor:"#fcf2e8",
-        paddingHorizontal:10,
+        paddingHorizontal:14,
         paddingVertical:10,
         borderRadius:10,
         elevation:2,
