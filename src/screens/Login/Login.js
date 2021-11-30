@@ -4,6 +4,7 @@ import {
     View,
     Text,
     StatusBar,
+    Image,
     TouchableOpacity,
     StyleSheet,
     ScrollView
@@ -17,12 +18,14 @@ const Login = ({ navigation, user }) => {
     return (
         <>
             <StatusBar barStyle="dark-content" backgroundColor={'#f8ece0'} />
-            <ScrollView >
-                <View style={styles.container} >
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <SafeAreaView style={styles.container} >
                     <View>
                         <Text style={styles.text1}>Login</Text>
                         <Text style={styles.text2}>Quiz ipsum suspendisses ultrices gravida.Risus commodo viverra maecenas accumsam lacus,facilisis</Text>
                         <View>
+                            <View>
+                            <Image style={styles.inputLogo} source={require('../../assets/images/email.png')} />
                             <Input
                                 inputContainerStyle={styles.borderdv}
                                 //  onFocus={()=>setToggleUser4(1)}
@@ -32,6 +35,9 @@ const Login = ({ navigation, user }) => {
                                 label="Email"
                                 placeholder='adwardg@gmail.com'
                             />
+                            </View>
+                            <View>
+                            <Image style={styles.inputLogo} source={require('../../assets/images/password.png')} />
                             <Input
                                 inputContainerStyle={styles.borderdv}
                                 //  onFocus={()=>setToggleUser4(1)}
@@ -41,6 +47,7 @@ const Login = ({ navigation, user }) => {
                                 label="Password"
                                 placeholder='************'
                             />
+                            </View>
                         </View>
                         <View style={styles.row}>
                             <Text style={{color:"#ada097",fontWeight:"bold",fontSize:12}}>Remember</Text>
@@ -55,7 +62,7 @@ const Login = ({ navigation, user }) => {
                                         screen: 'Home',
                                     })
                                 }}>
-                                <Text style={{ color: "#fdf0ea", fontWeight: "bold", fontSize: 16 }}>Login</Text>
+                                <Text style={{ color: "#fdf0ea", fontWeight: "bold", fontSize: 18 }}>Login</Text>
                             </TouchableOpacity>
                         </View>
                         <View style={styles.orLoginContainer}>
@@ -68,7 +75,7 @@ const Login = ({ navigation, user }) => {
                                 <AntDesign name='facebook-square' size={25} color={'#254ba0'} />
                             </View>
                             <View style={styles.iconBg}>
-                                <AntDesign name='google' size={25} />
+                            <Image style={styles.googleLogo} source={require('../../assets/images/google.png')} />
                             </View>
                             <View style={styles.iconBg}>
                                 <AntDesign name='twitter' size={25} color={'#1da1f3'} />
@@ -81,7 +88,7 @@ const Login = ({ navigation, user }) => {
                         <Text style={styles.text3}>Not a member?<Text style={{color:"#e64902"}}>Sign Up</Text></Text>
                         </TouchableOpacity>
                     </View>
-                </View>
+                </SafeAreaView >
             </ScrollView>
         </>
     )
@@ -101,15 +108,15 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20
     },
     btn: {
-        padding: 16,
+        padding: 15,
         backgroundColor: "#e74a07",
         alignItems: "center",
-        borderRadius: 20,
+        borderRadius: 10,
 
     },
     text1: {
         color: "#000000",
-        fontSize: 36,
+        fontSize: 34,
         fontWeight: "900",
         textAlign: "center",
         paddingVertical: "4%",
@@ -122,18 +129,28 @@ const styles = StyleSheet.create({
         lineHeight: 18,
         paddingBottom: "12%"
     },
+    inputLogo:{
+        position: "absolute",
+        top: 20,
+        left: 10,
+        height: 15,
+        width: 15,
+        resizeMode: "contain",
+    },
     email: {
-        paddingLeft: 35,
+        paddingLeft: 1,
         fontSize: 12,
-        color: "#000002",
+        color: "#000000",
+        top:10
     },
     borderdv: {
         borderBottomColor: "#e1d5c9",
     },
     label: {
         color: "#e84a03",
-        paddingLeft: 35,
-        fontSize: 12
+        paddingLeft: 25,
+        fontSize: 12,
+        top:20
     },
     row: {
         flexDirection: "row",
@@ -161,6 +178,10 @@ const styles = StyleSheet.create({
       text3:{
           color:"#85786f",
           fontWeight:"bold"
+      },
+      googleLogo:{
+          width:25,
+          height:25
       }
 })
 export default connect(mapStateToProps, null)(Login)
