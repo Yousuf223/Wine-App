@@ -92,7 +92,7 @@ const BeerMenu = ({ navigation, user }) => {
                     placeholder="Search"
                     placeholderTextColor="#85786f"
                     searchIcon={{ iconStyle: { color: "#85786f" } }}
-                    inputStyle={{ color: "#fff", fontSize: 14 }}
+                    inputStyle={{ color: "#fff", fontSize: 14,fontFamily:"Oswald-Regular" }}
                     containerStyle={{ backgroundColor: "#f8ece0" }}
                     inputContainerStyle={{
                         backgroundColor: "#eaddcd",
@@ -161,13 +161,15 @@ const styles = StyleSheet.create({
     },
     text0:{
         color:"#000000",
-        fontWeight:"bold",
         fontSize:18,
-        paddingLeft:16
+        paddingLeft:16,
+        fontFamily:"Oswald-Medium",
+        bottom:5
     },
     text1:{
         color:"#c5b9ad",
-        fontSize:16
+        fontSize:16,
+        fontFamily:"Oswald-Regular"
     },
     beer:{
         width:60,

@@ -80,14 +80,16 @@ const styles = StyleSheet.create({
     feedback: {
         paddingLeft: 15,
         color: "#000000",
-        fontWeight: "bold",
         fontSize: 20,
+        fontFamily:"Oswald-Medium",
+        bottom:6
     },
     email: {
         paddingLeft: 2,
         fontSize: 12,
         color: "#000000",
-        top: 10
+        top: 6,
+        fontFamily:"Oswald-Regular"
     },
     borderdv: {
         borderBottomColor: "#e1d5c9",
@@ -96,7 +98,8 @@ const styles = StyleSheet.create({
         color: "#e84a03",
         paddingLeft: 2,
         fontSize: 12,
-        top: 20
+        top: 20,
+        fontFamily:"Oswald-Regular"
     },
     footer:{
         width:"100%",
@@ -115,7 +118,8 @@ const styles = StyleSheet.create({
     text:{
         color:"#ffffff",
         fontSize:18,
-        fontWeight:"bold"
+        fontFamily:"Oswald-Medium"
+
     }
 })
 export default connect(mapStateToProps, null)(AppFeedback)

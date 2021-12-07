@@ -13,7 +13,10 @@ import {
 import Home from '../screens/Home/Home.screen'
 import Login from '../screens/Login/Login'
 import SignUp from '../screens/SignUp/SignUp'
+import ForgotPassword from '../screens/ForgotPassword/ForgotPassword';
+import Notification from '../screens/Notification/Notification';
 import BeerMenu from '../screens/BeerMenu/BeerMenu'
+import QRScaner from '../screens/QRScaner/QRScaner';
 import { NavigationContainer } from '@react-navigation/native'
 import {   createDrawerNavigator,
   DrawerContentScrollView,
@@ -103,6 +106,7 @@ function AuthStackNavigator() {
       initialRouteName="Login">
       <AuthStack.Screen name="Login" component={Login} />
       <AuthStack.Screen name="SignUp" component={SignUp} />
+      <AuthStack.Screen name="ForgotPassword" component={ForgotPassword} />
     </AuthStack.Navigator>
   );
 }
@@ -117,6 +121,8 @@ function AppStackNavigator() {
       initialRouteName="Home">
      <AppStack.Screen name="Home" component={MyDrawer} />
       <AppStack.Screen name="BeerMenu" component={BeerMenu} />
+      <AppStack.Screen name="QRScaner" component={QRScaner} />
+      <AppStack.Screen name="Notification" component={Notification} />
     </AppStack.Navigator>
   )
 }

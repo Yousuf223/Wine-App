@@ -101,8 +101,8 @@ const styles = StyleSheet.create({
     text1:{
         color:"#000000",
         paddingLeft:15,
-        fontWeight:"bold",
-        fontSize:16
+        fontSize:16,
+        fontFamily:"Oswald-Medium"
     },
     footer:{
         borderTopLeftRadius:20,

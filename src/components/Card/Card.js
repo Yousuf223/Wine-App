@@ -1,23 +1,30 @@
 import React from 'react'
-import { View, Text, StyleSheet,TextInput,Image } from 'react-native'
+import { View, Text, StyleSheet,TextInput,Image,TouchableOpacity } from 'react-native'
+// import { TouchableOpacity } from 'react-native-gesture-handler'
 export default function Card({
-    decription='Lagunitas ipa '
+    decription='Lagunitas ipa ',
+navigation
 }) {
   return (
     <>
-    <View style={styles.card}>
-    <View style={{flexDirection:"row",justifyContent:"space-around"}}>
-        <Text style={{fontSize:20,fontWeight:"bold",color:"#c3b9ad"}}>23</Text>    
+    <View
+    style={styles.card}>
+    <View style={{flexDirection:"row",justifyContent:"space-between"}}>
+        <Text style={{fontSize:20,color:"#c3b9ad",fontFamily:"Oswald-Medium"}}>23</Text>    
         <Image style={{width:30,height:100,resizeMode:"contain"}} source={require('../../assets/images/wine6.png')} />
+        <TouchableOpacity
+        
+        activeOpacity={0.9}
+        onPress={()=>{
+            alert('just image')
+        }}>
         <Image style={{width:30,height:30,resizeMode:"contain"}} source={require('../../assets/images/scan.png')} />
+        </TouchableOpacity>
     </View>   
     <Text style={styles.text0}>{decription}<Text style={{color:'#e74a07'}}>$6.00</Text ></Text>
-    <View style={{flexDirection:"row",marginVertical:6}}>
-        <View style={{backgroundColor:"#f3e7db",borderRadius:4,paddingHorizontal:4,paddingVertical:2}}>
-            <Text style={styles.text1}>Alc 4.2</Text>
-        </View>
-        <View style={{backgroundColor:"#f3e7db",marginLeft:10,borderRadius:4,paddingHorizontal:4,paddingVertical:2}}>
-            <Text style={styles.text1}>300ml</Text>
+    <View style={{marginVertical:6}}>
+        <View style={{backgroundColor:"#f3e7db",borderRadius:4,paddingHorizontal:4,paddingVertical:2,width:50,height:20,alignItems:"center"}}>
+            <Text style={styles.text1}>Abv 4.2</Text>
         </View>
     </View>
     </View>     
@@ -28,7 +35,7 @@ export default function Card({
 const styles = StyleSheet.create({
     card:{
         backgroundColor:"#fcf2e8",
-        paddingHorizontal:14,
+        paddingHorizontal:20,
         paddingVertical:10,
         borderRadius:10,
         elevation:2,
@@ -38,11 +45,12 @@ const styles = StyleSheet.create({
     text1:{
         color:"#7f705d",
         fontSize:10,
+        fontFamily:"Oswald-Regular"
     },
     text0:{
         color:"#000000",
-        fontWeight:"bold",
+        paddingTop:10,
+        fontFamily:"Oswald-Bold",
         fontSize:12,
-        paddingTop:10
     },
 })

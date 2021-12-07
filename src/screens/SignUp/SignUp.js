@@ -24,53 +24,68 @@ const SignUp = ({ navigation, user }) => {
                         <Text style={styles.text1}>Sign up</Text>
                         <Text style={styles.text2}>Quiz ipsum suspendisses ultrices gravida.Risus commodo viverra maecenas accumsam lacus,facilisis</Text>
                         <View>
-                            <View>
-                            <Image style={styles.inputLogo} source={require('../../assets/images/name.png')} />
-                            <Input
-                                inputContainerStyle={styles.borderdv}
-                                //  onFocus={()=>setToggleUser4(1)}
-                                //  onBlur={()=>setToggleUser4(0)}
-                                style={styles.email}
-                                labelStyle={styles.label}
-                                label="Full Name"
-                                placeholder='Edward Davidson'
-                            />
+                            <View style={{flexDirection:"row",justifyContent:"space-between"}}>
+                                <View>
+                                    <Image style={styles.inputLogo} source={require('../../assets/images/name.png')} />
+                                    <Input
+                                        inputContainerStyle={styles.borderdv}
+                                        //  onFocus={()=>setToggleUser4(1)}
+                                        //  onBlur={()=>setToggleUser4(0)}
+                                        style={styles.email}
+                                        labelStyle={styles.label}
+                                        label="Full Name"
+                                        placeholder='Edward Davidson'
+                                    />
+                                </View>
+                                <View>
+                                    <Image style={styles.inputLogo} source={require('../../assets/images/name.png')} />
+                                    <Input
+                                        inputContainerStyle={styles.borderdv}
+                                        //  onFocus={()=>setToggleUser4(1)}
+                                        //  onBlur={()=>setToggleUser4(0)}
+                                        style={styles.email}
+                                        labelStyle={styles.label}
+                                        label="Full Name"
+                                        placeholder='Edward Davidson'
+                                    />
+                                </View>
+                                </View>
+                                <View>
+                                
+                                <Image style={styles.inputLogo} source={require('../../assets/images/email.png')} />
+                                <Input
+                                    inputContainerStyle={styles.borderdv}
+                                    //  onFocus={()=>setToggleUser4(1)}
+                                    //  onBlur={()=>setToggleUser4(0)}
+                                    style={styles.email}
+                                    labelStyle={styles.label}
+                                    label="Email Address"
+                                    placeholder='adwardg@gmail.com'
+                                />
                             </View>
                             <View>
-                            <Image style={styles.inputLogo} source={require('../../assets/images/email.png')} />
-                            <Input
-                                inputContainerStyle={styles.borderdv}
-                                //  onFocus={()=>setToggleUser4(1)}
-                                //  onBlur={()=>setToggleUser4(0)}
-                                style={styles.email}
-                                labelStyle={styles.label}
-                                label="Email Address"
-                                placeholder='adwardg@gmail.com'
-                            />
+                                <Image style={styles.inputLogo} source={require('../../assets/images/password.png')} />
+                                <Input
+                                    inputContainerStyle={styles.borderdv}
+                                    //  onFocus={()=>setToggleUser4(1)}
+                                    //  onBlur={()=>setToggleUser4(0)}
+                                    style={styles.email}
+                                    labelStyle={styles.label}
+                                    label="Password"
+                                    placeholder='************'
+                                />
                             </View>
                             <View>
-                            <Image style={styles.inputLogo} source={require('../../assets/images/password.png')} />
-                                 <Input
-                                inputContainerStyle={styles.borderdv}
-                                //  onFocus={()=>setToggleUser4(1)}
-                                //  onBlur={()=>setToggleUser4(0)}
-                                style={styles.email}
-                                labelStyle={styles.label}
-                                label="Password"
-                                placeholder='************'
-                            />
-                            </View>
-                            <View>
-                            <Image style={styles.inputLogo} source={require('../../assets/images/password.png')} />
-                                 <Input
-                                inputContainerStyle={styles.borderdv}
-                                //  onFocus={()=>setToggleUser4(1)}
-                                //  onBlur={()=>setToggleUser4(0)}
-                                style={styles.email}
-                                labelStyle={styles.label}
-                                label="Confirm Password"
-                                placeholder='************'
-                            />
+                                <Image style={styles.inputLogo} source={require('../../assets/images/password.png')} />
+                                <Input
+                                    inputContainerStyle={styles.borderdv}
+                                    //  onFocus={()=>setToggleUser4(1)}
+                                    //  onBlur={()=>setToggleUser4(0)}
+                                    style={styles.email}
+                                    labelStyle={styles.label}
+                                    label="Confirm Password"
+                                    placeholder='************'
+                                />
                             </View>
                         </View>
                         <View>
@@ -82,7 +97,7 @@ const SignUp = ({ navigation, user }) => {
                                         screen: 'Home',
                                     })
                                 }}>
-                                <Text style={{ color: "#fdf0ea", fontWeight: "bold", fontSize: 18 }}>Sign Up</Text>
+                                <Text style={{ color: "#fdf0ea", fontSize: 18, fontFamily: "Oswald-Bold" }}>Sign Up</Text>
                             </TouchableOpacity>
                         </View>
                         <View style={styles.orLoginContainer}>
@@ -95,14 +110,14 @@ const SignUp = ({ navigation, user }) => {
                                 <AntDesign name='facebook-square' size={25} color={'#254ba0'} />
                             </View>
                             <View style={styles.iconBg}>
-                            <Image style={styles.googleLogo} source={require('../../assets/images/google.png')} />
+                                <Image style={styles.googleLogo} source={require('../../assets/images/google.png')} />
                             </View>
                             <View style={styles.iconBg}>
                                 <AntDesign name='twitter' size={25} color={'#1da1f3'} />
                             </View>
                         </View>
-                        <View style={{marginVertical:"14%",alignItems:"center"}}>
-                        <Text style={styles.text3}>Already a member?<Text style={{color:"#e64902"}}>Login</Text></Text>
+                        <View style={{ marginVertical: "14%", alignItems: "center" }}>
+                            <Text style={styles.text3}>Already a member?<Text style={{ color: "#e64902" }}>Login</Text></Text>
                         </View>
                     </View>
                 </SafeAreaView>
@@ -125,7 +140,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20
     },
     btn: {
-        padding: 15,
+        padding: 12,
         backgroundColor: "#e74a07",
         alignItems: "center",
         borderRadius: 10,
@@ -133,26 +148,29 @@ const styles = StyleSheet.create({
     },
     text1: {
         color: "#000000",
-        fontSize: 34,
+        fontSize: 30,
         fontWeight: "900",
         textAlign: "center",
         paddingVertical: "4%",
-        marginTop: "6%"
+        marginTop: "6%",
+        fontFamily: "Oswald-Bold"
     },
     text2: {
         color: "#aca094",
         fontSize: 12,
         textAlign: "center",
         lineHeight: 18,
-        paddingBottom: "12%"
+        paddingBottom: "12%",
+        fontFamily: "Oswald-Regular"
     },
     email: {
         paddingLeft: 1,
         fontSize: 12,
         color: "#000002",
-        top:12,
+        top: 12,
+        fontFamily: "Oswald-Regular"
     },
-    inputLogo:{
+    inputLogo: {
         position: "absolute",
         top: 20,
         left: 10,
@@ -167,7 +185,8 @@ const styles = StyleSheet.create({
         color: "#e84a03",
         paddingLeft: 25,
         fontSize: 12,
-        top:20
+        top: 20,
+        fontFamily: "Oswald-Regular"
     },
     iconBg: {
         backgroundColor: "#efe3d7",
@@ -175,24 +194,24 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         marginHorizontal: 8
     },
-    googleLogo:{
-        width:25,
-        height:25
+    googleLogo: {
+        width: 25,
+        height: 25
     },
     orLoginContainer: {
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-        marginVertical:14
-      },
-      linedv: {
+        marginVertical: 14
+    },
+    linedv: {
         width: 25,
         backgroundColor: "#8895a3",
         height: 1,
-      },
-      text3:{
-          color:"#85786f",
-          fontWeight:"bold"
-      }
+    },
+    text3: {
+        color: "#85786f",
+        fontFamily: "Oswald-Regular"
+    }
 })
 export default connect(mapStateToProps, null)(SignUp)

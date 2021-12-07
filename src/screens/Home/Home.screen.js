@@ -4,7 +4,7 @@ import {
   View,
   Text,
   StatusBar,
-  TouchableOpacity,
+  TouchableOpacity as TORN,
   StyleSheet,
   Image,
   PanResponder,
@@ -21,8 +21,9 @@ import CardDetail from '../../components/CardDetail/CardDetail'
 import { CustomScrollView } from '../../components/CustomScrollView/CustomScrollView'
 import { ScrollView } from 'react-native-gesture-handler'
 import * as Progress from 'react-native-progress';
+import { TouchableOpacity } from 'react-native-gesture-handler'
 const Home = (props) => {
-  const {navigation}=props
+  const { navigation } = props
   const dispatch = useDispatch()
   const [modalVisible, setModalVisible] = useState(false);
   const cardData = [
@@ -75,25 +76,49 @@ const Home = (props) => {
   for (var i = 1; i <= 75; i++) {
     jsx.push(i)
   }
+  
+  const [select, setSelect] = useState([])
+  const count = (index) => {
+
+    // setSelect(index)
+
+    var arr = []
+    const isSelected = select.findIndex((e) => e == index)
+    if (isSelected == -1) {
+      arr.push(index)
+      setSelect([...select, ...arr])
+
+    } else {
+      var newArr = select
+      newArr.splice(isSelected, 1)
+      setSelect(e => [...newArr])
+    }
+
+  }
   return (
     <>
+    <StatusBar barStyle="dark-content" backgroundColor={'#f8ece0'} />
       <SafeAreaView style={styles.container}>
-        <StatusBar barStyle="dark-content"  backgroundColor={'#f8ece0'} />
+      <View style={styles.header}>
+              <TORN
+                activeOpacity={0.8}
+                onPress={() => navigation.toggleDrawer()}
+              >
+                <Image style={styles.menu} source={require('../../assets/images/menu.png')} />
+              </TORN>
+              <Image style={styles.logo} source={require('../../assets/images/logo.png')} />
+              <TORN
+                onPress={() => navigation.navigate('Notification')}
+                activeOpacity={0.8}
+              >
+                <Image style={styles.notification} source={require('../../assets/images/notification.png')} />
+              </TORN>
+            </View>
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={{ paddingHorizontal: 20 }}>
-            <View style={styles.header}>
-              <TouchableOpacity 
-              activeOpacity={0.8}
-              onPress={() => navigation.toggleDrawer()}
-              >
-              <Image style={styles.menu} source={require('../../assets/images/menu.png')} />
-              </TouchableOpacity>
-              <Image style={styles.logo} source={require('../../assets/images/logo.png')} />
-              <Image style={styles.notification} source={require('../../assets/images/notification.png')} />
-            </View>
             <View style={styles.row2}>
               <View>
-                <Text>Popular Beers</Text>
+                <Text style={{fontFamily:"Western"}}>Popular Beers</Text>
                 <View style={{ width: 20, height: 1, backgroundColor: "#e74a07", marginTop: 6 }}></View>
               </View>
               <View style={styles.btn}>
@@ -101,28 +126,25 @@ const Home = (props) => {
               </View>
             </View>
             {/* <Image style={styles.beer} source={require('../../assets/images/beerCard.png')} /> */}
+
+
             <View style={{ flexDirection: "row", justifyContent: "space-between", position: "relative", zIndex: 10 }}>
-              <TouchableOpacity
-                activeOpacity={0.9}
-                onPress={() => navigation.navigate('BeerMenu')}
-              >
-                <Card />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => navigation.navigate('BeerMenu')}
-                activeOpacity={0.9}
-              >
-                <Card />
-              </TouchableOpacity>
+              {/*              
+             <Card/> */}
+              <Card />
+              <Card />
             </View>
             <View style={styles.row2}>
               <View>
                 <Text>All Beers</Text>
                 <View style={{ width: 20, height: 1, backgroundColor: "#e74a07", marginTop: 6 }}></View>
               </View>
-              <View style={styles.btn}>
+              <TORN
+                onPress={() => navigation.navigate('BeerMenu')}
+                activeOpacity={0.9}
+                style={styles.btn}>
                 <Text style={styles.textView}>View All</Text>
-              </View>
+              </TORN>
             </View>
             {
               cardData.map((item) => {
@@ -142,7 +164,8 @@ const Home = (props) => {
 
           </View>
         </ScrollView>
-        <View
+
+        <TORN
           style={styles.posi}>
           <Animated.View
             style={{
@@ -158,49 +181,66 @@ const Home = (props) => {
                 style={styles.beer} source={require('../../assets/images/beerCard.png')} />
             </TouchableOpacity>
           </Animated.View>
-        </View >
+        </TORN>
         <Modal
           animationIn="slideInRight"
           animationOut="slideOutLeft"
           animationInTiming={600}
           animationOutTiming={600}
           backdropColor="#f8ece0"
+          backdropOpacity={1}
           transparent={false}
           isVisible={modalVisible}
           onBackButtonPress={() => setModalVisible(!modalVisible)}
           onBackdropPress={() => setModalVisible(!modalVisible)}>
-          <View style={styles.modalView}>
-            <ScrollView showsVerticalScrollIndicator={false}>
-              <View style={styles.rowModal}>
-                <Text >Beer Card</Text>
-                <Entypo onPress={() => setModalVisible(!modalVisible)} name='cross' size={25} color={'#85786f'} />
-              </View>
-              <View style={styles.rowProgress}>
-                <Progress.Bar progress={0.3}
-                  animated={true} width={260}
-                  height={18}
-                  color={"#e74a07"}
-                  borderRadius={12}
-                  borderWidth={0}
-                  unfilledColor={"#e4d8cc"}
-                />
-                <Text style={{ color: "#867970", fontSize: 14, paddingLeft: 6,fontWeight:"bold" }}>7-75</Text>
-              </View>
-              {/* <View >
+          <View style={{height: '100%', width: '100%',}}>
+            <View style={styles.modalView}>
+              <ScrollView showsVerticalScrollIndicator={false}>
+                <View style={styles.rowModal}>
+                  <Text style={styles.beerCard}>Beer Card</Text>
+                  <View style={{ flexDirection: "row" }}>
+                    <TORN
+                     onPress={() => setSelect([])}
+                    activeOpacity={0.9}
+                    style={styles.reset}>
+                      <Text style={styles.resetText}>Reset</Text>
+                    </TORN>
+                    <Entypo onPress={() => setModalVisible(!modalVisible)} name='cross' size={25} color={'#85786f'} />
+                  </View>
+                </View>
+                <View style={styles.rowProgress}>
+                  <Progress.Bar progress={select.length/100}
+                    animated={true} width={260}
+                    height={22}
+                    color={"#e74a07"}
+                    borderRadius={12}
+                    borderWidth={0}
+                    unfilledColor={"#e4d8cc"}
+                  />
+                  <Text style={{ color: "#867970", fontSize: 14, paddingLeft: 6, fontFamily: "Oswald-Medium" }}>75-75</Text>
+                </View>
+                {/* <View >
             <Text>1</Text>
           </View> */}
-              <View style={styles.count}>
-                {jsx.map((jsx, index) => {
-                  return (
-                    <View style={styles.loop}>
-                      <Text style={styles.textNum}>{jsx}</Text>
-                    </View>
+                <View style={styles.count}>
+                  {jsx.map((jsx, index) => {
+                    return (
+                      <TORN
+                        activeOpacity={0.8}
+                        onPress={() =>
+                          count(index)
+                        }
+                        style={styles.loop}>
+                        {select.findIndex((e) => e == index) != -1 ? <Image
+                          style={styles.cross} source={require('../../assets/images/beerCardCross.png')} /> : <Text style={styles.textNum}>{jsx}</Text>}
+                      </TORN>
+                    )
+                  }
                   )
-                }
-                )
-                }
-              </View>
-            </ScrollView>
+                  }
+                </View>
+              </ScrollView>
+            </View>
           </View>
         </Modal>
       </SafeAreaView>
@@ -223,7 +263,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginTop: "10%"
+    marginTop: "16%",
+    marginHorizontal:20
   },
   menu: {
     width: 20,
@@ -231,8 +272,8 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
   },
   logo: {
-    width: "80%",
-    height: 40,
+    width: "70%",
+    height: 35,
     resizeMode: "contain"
   },
   notification: {
@@ -260,8 +301,8 @@ const styles = StyleSheet.create({
   textView: {
     color: "#e74a07",
     fontSize: 10,
-    fontWeight: "bold",
-    paddingTop: 3
+    fontFamily: "Oswald-Medium",
+    paddingTop: 2
   },
   beer: {
     width: 60,
@@ -291,7 +332,7 @@ const styles = StyleSheet.create({
   },
   textNum: {
     color: "#c5b9ab",
-    fontWeight: "bold"
+    fontFamily: "Oswald-Medium"
   },
   rowModal: {
     flexDirection: "row",
@@ -299,10 +340,31 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 10,
   },
-  rowProgress:{
-    flexDirection:"row",
-    paddingHorizontal:10,
-    paddingBottom:20
+  rowProgress: {
+    flexDirection: "row",
+    paddingHorizontal: 10,
+    paddingBottom: 20
+  },
+  reset: {
+    backgroundColor: "#d9cdc1",
+    width: 50,
+    height: 26,
+    borderRadius: 6,
+    alignItems: "center",
+    justifyContent: "center",
+    right: 12
+  },
+  beerCard: {
+    color: "#000000", fontSize: 16, fontFamily: "Oswald-Medium"
+  },
+  resetText: {
+    color: "#fcf2e9",
+    fontSize: 12,
+    fontFamily: "Oswald-Regular"
+  },
+  cross: {
+    width: 24,
+    height: 24
   }
 })
 export default connect(mapStateToProps, null)(Home)

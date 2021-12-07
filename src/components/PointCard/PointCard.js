@@ -15,12 +15,9 @@ export default function PointCard({
                             <Text style={styles.text}>23 May, 2021</Text>
                         </View>
                         <Text style={styles.title}> <Text style={styles.number}>{number}</Text> {title}</Text>
-                        <View style={{ flexDirection: "row", marginVertical: 6 }}>
-                            <View style={{ backgroundColor: "#f3e7db", borderRadius: 4, paddingHorizontal: 4, paddingVertical: 2 }}>
+                        <View style={{ marginVertical: 6 }}>
+                            <View style={{ backgroundColor: "#f3e7db", borderRadius: 4, paddingHorizontal: 4, paddingVertical: 2,alignItems:"center",width:50,height:20 }}>
                                 <Text style={styles.text1}>Alc 4.2</Text>
-                            </View>
-                            <View style={{ backgroundColor: "#f3e7db", marginLeft: 10, borderRadius: 4, paddingHorizontal: 4, paddingVertical: 2 }}>
-                                <Text style={styles.text1}>300ml</Text>
                             </View>
                         </View>
                     </View>
@@ -47,23 +44,25 @@ const styles = StyleSheet.create({
     btn: {
         backgroundColor: "#e74a07",
         borderRadius: 4,
-        width: 80, height: 20,
+        width: 70, height: 20,
         justifyContent: "center",
         alignItems: "center"
     },
     text: {
         fontSize: 10,
         textAlign: "center",
-        color: "#fff"
+        color: "#fff",
+        fontFamily:"Oswald-Regular"
     },
     text1: {
         color: "#7f705d",
-        fontSize: 10
+        fontSize: 10,
+        fontFamily:"Oswald-Regular"
     },
     text2:{
         color:"#e84907",
-        fontWeight:"bold",
-        fontSize:22
+        fontSize:22,
+        fontFamily:"Oswald-Medium"
     },
     number:{
         color:"#c5b9ad",
@@ -72,7 +71,8 @@ const styles = StyleSheet.create({
     },
     title:{
         color:"#000000",
-        fontWeight:"bold",
-        fontSize:16
+        fontSize:16,
+        fontFamily:"Oswald-Medium"
+
     }
 })

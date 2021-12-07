@@ -18,8 +18,8 @@ const Login = ({ navigation, user }) => {
     return (
         <>
             <StatusBar barStyle="dark-content" backgroundColor={'#f8ece0'} />
-            <ScrollView showsVerticalScrollIndicator={false}>
                 <SafeAreaView style={styles.container} >
+                <ScrollView showsVerticalScrollIndicator={false}>
                     <View>
                         <Text style={styles.text1}>Login</Text>
                         <Text style={styles.text2}>Quiz ipsum suspendisses ultrices gravida.Risus commodo viverra maecenas accumsam lacus,facilisis</Text>
@@ -50,8 +50,8 @@ const Login = ({ navigation, user }) => {
                             </View>
                         </View>
                         <View style={styles.row}>
-                            <Text style={{color:"#ada097",fontWeight:"bold",fontSize:12}}>Remember</Text>
-                            <Text style={{color:"#ada097",fontWeight:"bold",fontSize:12}}>Forgot Password</Text>
+                            <Text style={{color:"#ada097",fontWeight:"bold",fontSize:12,fontFamily:"Oswald-Regular"}}>Remember</Text>
+                            <Text onPress={() => navigation.navigate('ForgotPassword')} style={{color:"#ada097",fontWeight:"bold",fontSize:12,fontFamily:"Oswald-Regular"}}>Forgot Password</Text>
                         </View>
                         <View>
                             <TouchableOpacity
@@ -62,12 +62,12 @@ const Login = ({ navigation, user }) => {
                                         screen: 'Home',
                                     })
                                 }}>
-                                <Text style={{ color: "#fdf0ea", fontWeight: "bold", fontSize: 18 }}>Login</Text>
+                                <Text style={{ color: "#fdf0ea",  fontSize: 18,fontFamily:"Oswald-Bold" }}>Login</Text>
                             </TouchableOpacity>
                         </View>
                         <View style={styles.orLoginContainer}>
                             <View style={styles.linedv}></View>
-                            <Text style={{ paddingHorizontal: "1.5%", color: "#8895a3", fontSize: 12, fontFamily: 'Raleway-Regular' }}>Or Login with</Text>
+                            <Text style={{ paddingHorizontal: "1.5%", color: "#8895a3", fontSize: 12, fontFamily:"Oswald-Regular" }}>Or Login with</Text>
                             <View style={styles.linedv}></View>
                         </View>
                         <View style={{ flexDirection: "row", justifyContent: "center", }}>
@@ -88,8 +88,8 @@ const Login = ({ navigation, user }) => {
                         <Text style={styles.text3}>Not a member?<Text style={{color:"#e64902"}}>Sign Up</Text></Text>
                         </TouchableOpacity>
                     </View>
-                </SafeAreaView >
             </ScrollView>
+            </SafeAreaView >
         </>
     )
 }
@@ -108,26 +108,27 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20
     },
     btn: {
-        padding: 15,
+        padding: 12,
         backgroundColor: "#e74a07",
         alignItems: "center",
         borderRadius: 10,
-
     },
     text1: {
         color: "#000000",
-        fontSize: 34,
+        fontSize: 30,
         fontWeight: "900",
         textAlign: "center",
         paddingVertical: "4%",
-        marginTop: "6%"
+        marginTop: "6%",
+        fontFamily:'Oswald-Bold'
     },
     text2: {
         color: "#aca094",
         fontSize: 12,
         textAlign: "center",
         lineHeight: 18,
-        paddingBottom: "12%"
+        paddingBottom: "12%",
+        fontFamily:'Oswald-Regular'
     },
     inputLogo:{
         position: "absolute",
@@ -141,7 +142,8 @@ const styles = StyleSheet.create({
         paddingLeft: 1,
         fontSize: 12,
         color: "#000000",
-        top:10
+        top:10,
+        fontFamily:"Oswald-Regular"
     },
     borderdv: {
         borderBottomColor: "#e1d5c9",
@@ -150,7 +152,8 @@ const styles = StyleSheet.create({
         color: "#e84a03",
         paddingLeft: 25,
         fontSize: 12,
-        top:20
+        top:20,
+        fontFamily:"Oswald-Medium"
     },
     row: {
         flexDirection: "row",
@@ -177,7 +180,8 @@ const styles = StyleSheet.create({
       },
       text3:{
           color:"#85786f",
-          fontWeight:"bold"
+          fontFamily:"Oswald-Regular",
+          marginTop:14
       },
       googleLogo:{
           width:25,

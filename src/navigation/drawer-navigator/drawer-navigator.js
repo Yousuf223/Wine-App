@@ -24,8 +24,11 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import Animated from 'react-native-reanimated';
 import Home from '../../screens/Home/Home.screen';
-import MyPoint from '../../screens/MyPoint/MyPoint';
 import MyPurchase from '../../screens/MyPurchase/MyPurchase';
+import About from '../../screens/About/About';
+import Notification from '../../screens/Notification/Notification';
+import ChangePassword from '../../screens/ChangePassword/ChangePassword';
+import QRScaner from '../../screens/QRScaner/QRScaner';
 import AppFeedback from '../../screens/AppFeedback/AppFeedback';
 import ToggleSwich from '../../components/ToggleSwich/ToggleSwich';
 import AntDesign from 'react-native-vector-icons/AntDesign'
@@ -76,14 +79,13 @@ const DrawerContent = props => {
              <Image style={styles.menuHome} source={require('../../assets/images/menuPurchases.png')} />
           <Text style={styles.text1}>My Purchases</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => navigation.navigate('MyPoint')}
+          {/* <TouchableOpacity
             activeOpacity={0.8}
           style={styles.row1}
           >
              <Image style={styles.menuHome} source={require('../../assets/images/menuMy-Points.png')} />
           <Text style={styles.text1}>My Point</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         <TouchableOpacity 
         activeOpacity={0.8}
         style={styles.row1}
@@ -96,10 +98,13 @@ const DrawerContent = props => {
           quality &&(
             <View>
               <View style={{flexDirection:"row",paddingLeft:"12%",justifyContent:"space-between",alignItems:"center",paddingVertical:10}}>
-                <Text style={styles.text3}>Change Password</Text>
+                <Text onPress={() => navigation.navigate('ChangePassword')} style={styles.text3}>Change Password</Text>
                 <AntDesign  name='right' size={16} color={'#eb4909'} />
               </View>
-              <View style={{flexDirection:"row",paddingLeft:"12%",justifyContent:"space-between",alignItems:"center"}}>
+              <TouchableOpacity
+              onPress={() => navigation.navigate('Notification')}
+              activeOpacity={0.8}
+              style={{flexDirection:"row",paddingLeft:"12%",justifyContent:"space-between",alignItems:"center"}}>
                 <Text style={styles.text3}>Notification</Text>
                 <ToggleSwich
                    selectionMode={1}
@@ -107,7 +112,7 @@ const DrawerContent = props => {
                      setUntilToday(e)
                    }}
                 />
-              </View>
+              </TouchableOpacity>
             </View>
           )
         }
@@ -122,6 +127,7 @@ const DrawerContent = props => {
           <TouchableOpacity 
           activeOpacity={0.8}
           style={styles.row1}
+          onPress={() => navigation.navigate('About')}
           >
             <Image style={styles.menuHome} source={require('../../assets/images/menuAbout-App.png')} />
           <Text style={styles.text1}>About App</Text>
@@ -130,6 +136,7 @@ const DrawerContent = props => {
         <TouchableOpacity 
         activeOpacity={0.8}
         style={styles.logout}
+        onPress={() => navigation.navigate('Login')}
         >
            <Image style={styles.menuHome} source={require('../../assets/images/menuLogout.png')} />
           <Text style={styles.textLogout}>Logout</Text>
@@ -167,9 +174,12 @@ const Screens = ({navigation, style}) => {
  
 
         <Stack.Screen name="Home">{props => <Home {...props} />}</Stack.Screen>
-        <Stack.Screen name="MyPoint">{props => <MyPoint {...props} />}</Stack.Screen>
         <Stack.Screen name="MyPurchase">{props => <MyPurchase {...props} />}</Stack.Screen>
         <Stack.Screen name="AppFeedback">{props => <AppFeedback {...props} />}</Stack.Screen>
+        <Stack.Screen name="About">{props => <About {...props} />}</Stack.Screen>
+        <Stack.Screen name="ChangePassword">{props => <ChangePassword {...props} />}</Stack.Screen>
+        <Stack.Screen name="QRScaner">{props => <QRScaner {...props} />}</Stack.Screen>
+        <Stack.Screen name="Notification">{props => <Notification {...props} />}</Stack.Screen>
       </Stack.Navigator>
     </Animated.View>
   );
@@ -240,8 +250,8 @@ const styles = StyleSheet.create({
   textNum:{
     fontSize:12,
     color:"#949a96",
-    // paddingHorizontal:2,
-    paddingTop:8
+    paddingTop:8,
+    fontFamily:"Oswald-Regular"
   },
   row1:{
     paddingVertical:14,
@@ -249,9 +259,10 @@ const styles = StyleSheet.create({
   },
   text1:{
     color:"#fff",
-    fontWeight:"bold",
     fontSize:16,
-    paddingLeft:8
+    paddingLeft:8,
+    fontFamily:"Oswald-Medium",
+    bottom:4
   },
   logout:{
     paddingTop:"12%",
@@ -260,9 +271,10 @@ const styles = StyleSheet.create({
   },
   textLogout:{
     color:"#ffffff",
-    fontWeight:"bold",
     fontSize:16,
-    paddingLeft:8
+    paddingLeft:8,
+    fontFamily:"Oswald-Medium",
+    bottom:4
   },
   profile:{
     width:55,
@@ -275,9 +287,9 @@ const styles = StyleSheet.create({
   },
   profileName:{
     color:"#ffffff",
-    fontWeight:"bold",
     fontSize:18,
-    paddingRight:8
+    paddingRight:8,
+    fontFamily:"Oswald-Medium"
   },
   menuHome:{
     width:20,
