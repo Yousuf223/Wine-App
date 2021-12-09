@@ -1,4 +1,4 @@
-package com.appstirr;
+package com.appstirr.wineapp;
 import android.os.Bundle;
 import org.devio.rn.splashscreen.SplashScreen;
 import com.facebook.react.ReactActivity;
