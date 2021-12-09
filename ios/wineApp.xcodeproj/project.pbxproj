@@ -7,25 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C09EC9C6B98421B87A31074 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A43AB92CF0844D91B3D40167 /* Ionicons.ttf */; };
 		12BFDDAA2760B54900BC3B85 /* WineApp in Resources */ = {isa = PBXBuildFile; fileRef = 12BFDDA92760B54900BC3B85 /* WineApp */; };
-		4137DC181FD7459EAC11E64A /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA76B0DFF21F401B9F60994E /* Zocial.ttf */; };
 		49DD518F2AF54AD910267414 /* libPods-WineApp-WineAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B398F20429BE8AFF086378B5 /* libPods-WineApp-WineAppTests.a */; };
-		49F92495F82D4E5E9D117D96 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46C64AC1358249BA9E76B9D0 /* Feather.ttf */; };
-		5F015C7108A54736A5559A3B /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FC2EA1BC9EC450787E3AE8A /* Entypo.ttf */; };
-		5F30E12AA8F5468B92F6D51D /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAF0FF05DA9F43ADAFCCB1AB /* MaterialIcons.ttf */; };
-		6753B4BDEEE1436D85A37303 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E18E903747D40A1B13C34FE /* FontAwesome5_Regular.ttf */; };
-		7EF6D3FF25CC48A7B60619EA /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A94A50C16B274A9F8F01CF17 /* AntDesign.ttf */; };
 		803898591077249D7E444978 /* libPods-WineApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2077AE36A1311A154C660A /* libPods-WineApp.a */; };
-		A79A0D81E3CC43EA903EA26B /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49143DD91C354094BADEA1C2 /* FontAwesome.ttf */; };
-		B59C15DD47E2446DBF426A53 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 416FB2CF547E44AC9F12268F /* FontAwesome5_Brands.ttf */; };
-		BCCC5F33037B49FDA3A5CC12 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38628B5F36C449D2A67BE7B3 /* Fontisto.ttf */; };
-		BF5EB217C1164B2D80D37770 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E31936A1A78C4EF2A9E70035 /* FontAwesome5_Solid.ttf */; };
-		C15CA1D547284C018D0F2027 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0AF33138829449C092BBBCF9 /* MaterialCommunityIcons.ttf */; };
-		CEBD74AA5DE04E21A5CFB17A /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E60230D2538424991E7FE49 /* EvilIcons.ttf */; };
-		D1451310C4544353924DF999 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB89E81068204BE198C44A0C /* Foundation.ttf */; };
-		D537FB00E0CF403EBBF28E2B /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AF185C14D9E4DF4A72FEF64 /* Octicons.ttf */; };
-		EDA50FEBD2BA40CCA082658D /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91745547238E43F2BC5F8C46 /* SimpleLineIcons.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -256,23 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EF6D3FF25CC48A7B60619EA /* AntDesign.ttf in Resources */,
 				12BFDDAA2760B54900BC3B85 /* WineApp in Resources */,
-				5F015C7108A54736A5559A3B /* Entypo.ttf in Resources */,
-				CEBD74AA5DE04E21A5CFB17A /* EvilIcons.ttf in Resources */,
-				49F92495F82D4E5E9D117D96 /* Feather.ttf in Resources */,
-				A79A0D81E3CC43EA903EA26B /* FontAwesome.ttf in Resources */,
-				B59C15DD47E2446DBF426A53 /* FontAwesome5_Brands.ttf in Resources */,
-				6753B4BDEEE1436D85A37303 /* FontAwesome5_Regular.ttf in Resources */,
-				BF5EB217C1164B2D80D37770 /* FontAwesome5_Solid.ttf in Resources */,
-				BCCC5F33037B49FDA3A5CC12 /* Fontisto.ttf in Resources */,
-				D1451310C4544353924DF999 /* Foundation.ttf in Resources */,
-				0C09EC9C6B98421B87A31074 /* Ionicons.ttf in Resources */,
-				C15CA1D547284C018D0F2027 /* MaterialCommunityIcons.ttf in Resources */,
-				5F30E12AA8F5468B92F6D51D /* MaterialIcons.ttf in Resources */,
-				D537FB00E0CF403EBBF28E2B /* Octicons.ttf in Resources */,
-				EDA50FEBD2BA40CCA082658D /* SimpleLineIcons.ttf in Resources */,
-				4137DC181FD7459EAC11E64A /* Zocial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,7 +556,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -653,7 +621,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
